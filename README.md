@@ -52,41 +52,74 @@ In the jupyter notebook, we begin by loading in the applicants_data.csv and revi
 
 We will use a dataset of start-up applications to build these models.  The goal of building these models is so that we can identify which applicants will
 become a successful business.  In order to build the model, all the data must be changed to integers, therefore we take the categorical variables and use
-`OneHotEncoder` to convert the DataFrame.  
+`OneHotEncoder` to convert the DataFrame.  Then, we use the encoded DataFrame and concatenate it with the numerical variables from the original DataFrame.  
+```python
+    # Create a list of categorical variables 
+    categorical_variables = list(applicant_data_df.dtypes[applicant_data_df.dtypes == "object"].index)
+    
+    # Create a OneHotEncoder instance
+    enc = OneHotEncoder(sparse=False)
+    
+    # Encode the categorcal variables using OneHotEncoder
+    encoded_data = enc.fit_transform(applicant_data_df[categorical_variables])
+    
+    # Create a DataFrame with the encoded variables
+    encoded_df = pd.DataFrame(encoded_data, columns = enc.get_feature_names(categorical_variables))
+    
+    # Add the numerical variables from the original DataFrame to the one-hot encoding DataFrame
+    numerical_variables_df = applicant_data_df.drop(columns = categorical_variables)
+    encoded_df = pd.concat(
+        [
+            numerical_variables_df,
+            encoded_df
+        ],
+        axis=1
+    )
 
-To build the model, first we take the CSV dataset and put it into a dataframe.  We will split the dataframe with `y` being the `loan_status` column, 
-and `X` dataframe as the remaining columns.  Here we use the `value_counts` function to show us the amount of healthy loans in the dataset versus
-the amount of risky loans in both the original model.  Finally, we split the data into training and testing datasets by using the function
-`train_test_split`.  With the training datasets we can fit our logistic regression model.  We can predict and evaluate the model’s performance by
-calculating the accuracy score of the model, generating a confusion matrix, and printing the classification report.
+```
 
-From the `value_counts` function we did earlier, we see that the 75036 number of good loans greatly outweight the 2500 risky loans, therefore we 
-predict a new logistic regression model with resampling the training data by oversampling the high-risk loans.  We use the `RandomOverSampler`
-module from the imbalanced-learn library to resample the data and with `value_counts` function we confirm that the labels have an equal number of data 
-points.  Once again, we use the `LogisticRegression` classifier, but this time on the oversampled data and print and generate the same reports that we 
-did from the first test in order to directly compare how our oversampled test model did.  In the next section, we will examine these results.
+With this encoded DataFrame, we will create the features (X) and target (y) datasets for use in our model to use as our training and testing datasets.  The
+target dataset is defined by the preprocessed DataFrame column “IS_SUCCESSFUL”.  The remaining columns define the features dataset.  we split the features and target sets into training and testing
+datasets
+```python
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)
+```
+
+Use scikit-learn's `StandardScaler` to scale the features data
+```python
+    # Create a StandardScaler instance
+    scaler = StandardScaler()
+
+    # Fit the scaler to the features training dataset
+    X_scaler = scaler.fit(X_train)
+
+    # Fit the scaler to the features training dataset
+    X_train_scaled = X_scaler.transform(X_train)
+    X_test_scaled = X_scaler.transform(X_test)
+```
+
 
 ## Results
 
-* Original Model:
+Original Model:
 
 
 ![orig_model_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/orig_model_summary.PNG?raw=true)
   * The model loss and accuracy results: Loss: 0.5555901527404785, Accuracy: 0.7290962338447571
 
-* Alternative Model 1:
+Alternative Model 1:
 
 
 ![alt_model1_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model1_summary.PNG?raw=true)
   * The model loss and accuracy results: Loss: 0.5808674693107605, Accuracy: 0.7286297082901001
 
-* Alternative Model 2:
+Alternative Model 2:
 
 
 ![alt_model2_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model2_summary.PNG?raw=true)
   * The model loss and accuracy results: Loss: 0.6244015693664551, Accuracy: 0.7287463545799255
 
-* Alternative Model 3:
+Alternative Model 3:
 
 
 ![alt_model3_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model3_summary.PNG?raw=true)

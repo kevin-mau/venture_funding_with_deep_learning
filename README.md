@@ -52,8 +52,7 @@ In the jupyter notebook, we begin by loading in the applicants_data.csv and revi
 
 We will use a dataset of start-up applications to build these models.  The goal of building these models is so that we can identify which applicants will
 become a successful business.  In order to build the model, all the data must be changed to integers, therefore we take the categorical variables and use
-be signified by a value of `0` in the 
-`loan_status` column, meaning that the loan is healthy.  A value of `1` means that the loan has a high risk of defaulting.
+`OneHotEncoder` to convert the DataFrame.  
 
 To build the model, first we take the CSV dataset and put it into a dataframe.  We will split the dataframe with `y` being the `loan_status` column, 
 and `X` dataframe as the remaining columns.  Here we use the `value_counts` function to show us the amount of healthy loans in the dataset versus

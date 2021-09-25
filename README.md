@@ -41,24 +41,18 @@ math
 ```
 
 ## Usage:
-In the jupyter notebook, we begin by loading in the price change percentages data of the cryptocurrencies.
+In the jupyter notebook, we begin by loading in the applicants_data.csv and review the DataFrame.
 ```python
-  df_market_data = pd.read_csv(
-    Path("Resources/crypto_market_data.csv"),
-    index_col="coin_id")
+    # Read the applicants_data.csv file from the Resources folder into a Pandas DataFrame
+    applicant_data_df = pd.read_csv(Path("./Resources/applicants_data.csv"))
+
+    # Review the DataFrame
+    applicant_data_df
 ```
 
---stop here
-
-Credit risk poses a classification problem for machine learning.  The problem stems from the inbalance of healthy loans that vastly outnumber 
-the amount of risky loans. In this analysis, we will train and evaluate models with imbalanced classes.  We will use a logistic regression model 
-to resample the data by using the `RandomOverSampler` module from the imbalanced-learn library, then compare two versions of the dataset.
- 
-To do our comparisons, we will get the count of the target classes, train logistic regression classifiers, calculate the balanced accuracy scores, 
-generate confusion matrices, and generate classification reports for both cases.
-
-We will use a dataset of historical lending activity from a peer-to-peer lending services company to build these models.  The goal of building 
-these models is so that we can identify the creditworthiness of borrowers.  The creditworthiness will be signified by a value of `0` in the 
+We will use a dataset of start-up applications to build these models.  The goal of building these models is so that we can identify which applicants will
+become a successful business.  In order to build the model, all the data must be changed to integers, therefore we take the categorical variables and use
+be signified by a value of `0` in the 
 `loan_status` column, meaning that the loan is healthy.  A value of `1` means that the loan has a high risk of defaulting.
 
 To build the model, first we take the CSV dataset and put it into a dataframe.  We will split the dataframe with `y` being the `loan_status` column, 
@@ -76,15 +70,19 @@ did from the first test in order to directly compare how our oversampled test mo
 ## Results
 
 * Original Model:
+![orig_model_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/orig_model_summary.PNG?raw=true)
   * The model loss and accuracy results: Loss: 0.5555901527404785, Accuracy: 0.7290962338447571
 
 * Alternative Model 1:
+![alt_model1_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model1_summary.PNG?raw=true)
   * The model loss and accuracy results: Loss: 0.5808674693107605, Accuracy: 0.7286297082901001
 
 * Alternative Model 2:
+![alt_model2_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model2_summary.PNG?raw=true)
   * The model loss and accuracy results: Loss: 0.6244015693664551, Accuracy: 0.7287463545799255
 
 * Alternative Model 3:
+![alt_model3_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model3_summary.PNG?raw=true)
   * The model loss and accuracy results: Loss: 0.7869622707366943, Accuracy: 0.7209329605102539
 
 ---

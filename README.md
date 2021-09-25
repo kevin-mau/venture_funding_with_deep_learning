@@ -69,18 +69,26 @@ did from the first test in order to directly compare how our oversampled test mo
 ## Results
 
 * Original Model:
+
+
 ![orig_model_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/orig_model_summary.PNG?raw=true)
   * The model loss and accuracy results: Loss: 0.5555901527404785, Accuracy: 0.7290962338447571
 
 * Alternative Model 1:
+
+
 ![alt_model1_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model1_summary.PNG?raw=true)
   * The model loss and accuracy results: Loss: 0.5808674693107605, Accuracy: 0.7286297082901001
 
 * Alternative Model 2:
+
+
 ![alt_model2_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model2_summary.PNG?raw=true)
   * The model loss and accuracy results: Loss: 0.6244015693664551, Accuracy: 0.7287463545799255
 
 * Alternative Model 3:
+
+
 ![alt_model3_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model3_summary.PNG?raw=true)
   * The model loss and accuracy results: Loss: 0.7869622707366943, Accuracy: 0.7209329605102539
 

@@ -147,8 +147,7 @@ Alternative Model 3:
   * The model loss and accuracy results: Loss: 0.5542921423912048, Accuracy: 0.72967928647995
 
 We see that we were able to marginally improve the accuracy from the original model, except for Alternative Model 2.
-Alternative Model 1 had 0.001166 better accuracy than the original model.
-
+Alternative Model 1 had 0.001166 better accuracy than the original model. And Alternative Model 3 had 0.000466 better accuracy than the original model.
 
 I have saved and exported the four different models to HDF5 files and uploaded into the Resources folder in the github repository.
 

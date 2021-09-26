@@ -126,7 +126,7 @@ Original Model:
 
 
 ![orig_model_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/orig_model_summary.PNG?raw=true)
-  * The model loss and accuracy results: Loss: 0.5589261651039124, Accuracy: 0.7292128205299377
+![orig_model_results](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/orig_model_results.jpg?raw=true)
 
 Alternative Model 1:
 

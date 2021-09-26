@@ -8,11 +8,11 @@ features in the provided dataset to create some binary classifier models that wi
 
 We will do the following three technical deliverables:
 
-Preprocess data for a neural network model.
+  * Preprocess data for a neural network model.
 
-Use the model-fit-predict pattern to compile and evaluate a binary classification model.
+  * Use the model-fit-predict pattern to compile and evaluate a binary classification model.
 
-Optimize the model.
+  * Optimize the model.
 
 ---
 ## Technologies:

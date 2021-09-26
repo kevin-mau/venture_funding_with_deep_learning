@@ -132,19 +132,19 @@ Alternative Model 1:
 
 
 ![alt_model1_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model1_summary.PNG?raw=true)
-  * The model loss and accuracy results: Loss: 0.6245193481445312, Accuracy: 0.7303789854049683
+![alt_model1_results](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model1_results.jpg?raw=true)
 
 Alternative Model 2:
 
 
 ![alt_model2_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model2_summary.PNG?raw=true)
-  * The model loss and accuracy results: Loss: 0.6688194274902344, Accuracy: 0.7265306115150452
+![alt_model2_results](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model2_result.jpg?raw=true)
 
 Alternative Model 3:
 
 
 ![alt_model3_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model3_summary.PNG?raw=true)
-  * The model loss and accuracy results: Loss: 0.5542921423912048, Accuracy: 0.72967928647995
+![alt_model3_results](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model3_results.jpg?raw=true)
 
 We see that we were able to marginally improve the accuracy from the original model, except for Alternative Model 2.
 Alternative Model 1 had 0.001166 better accuracy than the original model. And Alternative Model 3 had 0.000466 better accuracy than the original model.

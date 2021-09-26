@@ -99,7 +99,7 @@ Use scikit-learn's `StandardScaler` to scale the features data
 
 We will now use the model-fit-predict pattern to compile and evaluate a binary classification model.
 
-Model 1: 116 input features & 2 hidden layers.  1st hidden layer has 58 nodes, 2nd hidden layer has 29 nodes.  Using the Sequential model and relu activation.
+"Original Model": 116 input features & 2 hidden layers.  1st hidden layer has 58 nodes, 2nd hidden layer has 29 nodes.  Using the Sequential model and relu activation.
 We compile the model and fit the model using 50 epochs.
 ```python
     # Compile the Sequential model

@@ -146,8 +146,10 @@ Alternative Model 3:
 ![alt_model3_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model3_summary.PNG?raw=true)
 ![alt_model3_results](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model3_results.jpg?raw=true)
 
-We see that we were able to marginally improve the accuracy from the original model, except for Alternative Model 2.
-Alternative Model 1 had 0.001166 better accuracy than the original model. And Alternative Model 3 had 0.000466 better accuracy than the original model.
+We see that we were able to improve the accuracy from the original model on both Alternative Model 1 and Alternative Model 3.
+  *  Alternative Model 1 had 0.001166 better accuracy than the original model. 
+  *  Alternative Model 3 had 0.000466 better accuracy than the original model.
+  *  Alternative Model 2 had -0.002682 worse accuracy than the original model.
 
 I have saved and exported the four different models to HDF5 files and uploaded into the Resources folder in the github repository.
 

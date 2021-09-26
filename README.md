@@ -115,7 +115,7 @@ Alternate Model 1:  This time we will try it with more hidden layers.  We will t
 we go each layer.  Again we will use relu but this time we will try linear activation for the outer layer.  Also, instead of 50 epochs, we'll try 800.
 
 Alternate Model 2:  This time we will try with a different number of nodes in the hidden layer.  The number of nodes will be the square root of sum of the number
-of input features and number of output neurons.
+of input features and number of output neurons.  This method of determining the number of nodes was introduced to me by my instructor.
 
 Alternate Model 3:  This time we will try the original model again, except we will exclude two DataFrame columns: “STATUS” and “SPECIAL_CONSIDERATIONS” as these 
 two features columns may have variables or outliers that might be confusing the model.
@@ -126,25 +126,31 @@ Original Model:
 
 
 ![orig_model_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/orig_model_summary.PNG?raw=true)
-  * The model loss and accuracy results: Loss: 0.5555901527404785, Accuracy: 0.7290962338447571
+  * The model loss and accuracy results: Loss: 0.5589261651039124, Accuracy: 0.7292128205299377
 
 Alternative Model 1:
 
 
 ![alt_model1_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model1_summary.PNG?raw=true)
-  * The model loss and accuracy results: Loss: 0.5808674693107605, Accuracy: 0.7286297082901001
+  * The model loss and accuracy results: Loss: 0.6245193481445312, Accuracy: 0.7303789854049683
 
 Alternative Model 2:
 
 
 ![alt_model2_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model2_summary.PNG?raw=true)
-  * The model loss and accuracy results: Loss: 0.6244015693664551, Accuracy: 0.7287463545799255
+  * The model loss and accuracy results: Loss: 0.6688194274902344, Accuracy: 0.7265306115150452
 
 Alternative Model 3:
 
 
 ![alt_model3_summary](https://github.com/kevin-mau/venture_funding_with_deep_learning/blob/main/Resources/alt_model3_summary.PNG?raw=true)
-  * The model loss and accuracy results: Loss: 0.7869622707366943, Accuracy: 0.7209329605102539
+  * The model loss and accuracy results: Loss: 0.5542921423912048, Accuracy: 0.72967928647995
+
+We see that we were able to marginally improve the accuracy from the original model, except for Alternative Model 2.
+Alternative Model 1 had 0.001166 better accuracy than the original model.
+
+
+I have saved and exported the four different models to HDF5 files and uploaded into the Resources folder in the github repository.
 
 ---
 

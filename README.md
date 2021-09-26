@@ -118,9 +118,7 @@ Alternate Model 2:  This time we will try with a different number of nodes in th
 of input features and number of output neurons.
 
 Alternate Model 3:  This time we will try the original model again, except we will exclude two DataFrame columns: “STATUS” and “SPECIAL_CONSIDERATIONS” as these 
-two features columns may have variables or outliers that confuse the model.
-
-
+two features columns may have variables or outliers that might be confusing the model.
 
 ## Results
 

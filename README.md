@@ -79,8 +79,7 @@ become a successful business.  In order to build the model, all the data must be
 ```
 
 With this encoded DataFrame, we will create the features (X) and target (y) datasets for use in our model to use as our training and testing datasets.  The
-target dataset is defined by the preprocessed DataFrame column “IS_SUCCESSFUL”.  The remaining columns define the features dataset.  we split the features and target sets into training and testing
-datasets
+target dataset is defined by the preprocessed DataFrame column “IS_SUCCESSFUL”.  The remaining columns define the features dataset.
 ```python
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)
 ```
@@ -97,6 +96,30 @@ Use scikit-learn's `StandardScaler` to scale the features data
     X_train_scaled = X_scaler.transform(X_train)
     X_test_scaled = X_scaler.transform(X_test)
 ```
+
+We will now use the model-fit-predict pattern to compile and evaluate a binary classification model.
+
+Model 1: 116 input features & 2 hidden layers.  1st hidden layer has 58 nodes, 2nd hidden layer has 29 nodes.  Using the Sequential model and relu activation.
+We compile the model and fit the model using 50 epochs.
+```python
+    # Compile the Sequential model
+    nn.compile(loss="binary_crossentropy", optimizer="adam", metrics=["accuracy"])
+
+    # Fit the model using 50 epochs and the training data
+    fit_model = nn.fit(X_train_scaled, y_train, epochs=50)
+```
+
+Below we will review the results of this model, but first let's try to optimize the model.
+
+Alternate Model 1:  This time we will try it with more hidden layers.  We will try 4 hidden layers, starting at 58 nodes, down to 29, then 15, and finally 8 as
+we go each layer.  Again we will use relu but this time we will try linear activation for the outer layer.  Also, instead of 50 epochs, we'll try 800.
+
+Alternate Model 2:  This time we will try with a different number of nodes in the hidden layer.  The number of nodes will be the square root of sum of the number
+of input features and number of output neurons.
+
+Alternate Model 3:  This time we will try the original model again, except we will exclude two DataFrame columns: “STATUS” and “SPECIAL_CONSIDERATIONS” as these 
+two 
+
 
 
 ## Results
